@@ -51,6 +51,9 @@ def on_message(client, userdata, message):
             print(f"🌡 Temperature: {temperature}°C")
             print(f"💧 Humidity: {humidity}%")
             print(f"🔘 Door: {'Closed' if door == 0 else 'Open'}")
+            
+            if(temperature > '25.00'):
+                print("Temperature limit exceeded! Close the fucking door!")
 
             # Insert data into MySQL
             sql = "INSERT INTO sensor_data (temperature, humidity, door) VALUES (%s, %s, %s)"
